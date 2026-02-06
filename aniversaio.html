@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Feliz Aniversario 💖</title>
+
+<!-- Vista previa WhatsApp -->
+<meta property="og:title" content="Feliz 1er aniversario, Daniela 💕">
+<meta property="og:description" content="7 de febrero • Un año contigo 🤍">
+<meta property="og:image" content="foto1.jpg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  background: #fdecef;
+  font-family: Arial, sans-serif;
+  color: #333;
+  transition: background 2s ease;
+}
+
+body.final {
+  background: #f8d7da;
+}
+
+/* TEXTO */
+.texto {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  animation: aparecerTexto 2s ease forwards;
+}
+
+@keyframes aparecerTexto {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* GALERÍA */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin: 40px auto;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.foto {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: contain;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: aparecer 1.5s ease forwards;
+}
+
+.foto:nth-child(1){animation-delay:.5s}
+.foto:nth-child(2){animation-delay:2s}
+.foto:nth-child(3){animation-delay:3.5s}
+.foto:nth-child(4){animation-delay:5s}
+.foto:nth-child(5){animation-delay:6.5s}
+.foto:nth-child(6){animation-delay:8s}
+
+@keyframes aparecer {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animación especial solo ustedes */
+.nosotros {
+  animation:
+    aparecer 1.5s ease forwards,
+    latido 6s ease-in-out infinite;
+}
+
+@keyframes latido {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+/* CORAZONES */
+.corazones {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  display: none;
+}
+
+.corazon {
+  position: absolute;
+  bottom: -20px;
+  font-size: 16px;
+  opacity: .4;
+  animation: flotar 10s linear infinite;
+}
+
+@keyframes flotar {
+  from { transform: translateY(0); opacity:0; }
+  20% { opacity:.4; }
+  to { transform: translateY(-100vh); opacity:0; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MÚSICA -->
+<audio id="musica" loop>
+  <source src="spark.mp3" type="audio/mpeg">
+</audio>
+
+<!-- TEXTO -->
+<div class="texto">
+<h1 style="text-align:center;color:#c9184a;">💖 Feliz 1er Aniversario 💖</h1>
+<h3 style="text-align:center;">Daniela ✨ — 7 de febrero 📅</h3>
+
+<p>Hola amor 💕, vaya ya un año 🥹 no puedo creerlo y ¿por qué? bueno porque eres la primer relación que tengo que me ha hecho sentir y vivir tantas cosas que no tengo una forma certera de poder explicarlo o demostrarlo ✨.</p>
+
+<p>Primero te quiero agradecer 🙏 por seguir conmigo, por estar a pesar de los malos momentos y por soportarme aun cuando puedo llegar a ser alguien difícil y muy insistente 😅. Gracias por ser parte de tu vida y por dejarme seguirlo siendo más tiempo 💞.</p>
+
+<p>Las palabras no son suficientes para poder expresarme, porque mientras escribo esto estoy temblando 🫀 y siento muchas emociones. Desearía que estuvieras aquí conmigo, poder abrazarte 🤍, sentir tu cálida presencia, oír tu increíble voz 🎶 y la reconfortación de tus brazos 🤗.</p>
+
+<p>Sé que no es fácil una relación y aun así cuentas conmigo 💪. Si solo quieres que esté ahí sin hablar, lo estaré. En las buenas y en las malas, en la salud y en la enfermedad 🤍.</p>
+
+<p>Siempre estaré para ti 💖. Seremos nosotros contra los problemas 🫂.</p>
+
+<p>Te elijo con los ojos abiertos 👀, en tus luces ✨ y sombras 🌙. No busco perfección, busco presencia. En los silencios cómodos e incómodos 🤍.</p>
+
+<p>Si la vida me diera mil opciones, te escogería a ti una y otra vez ❤️. Porque te amo y amo tu ser.</p>
+
+<h2 style="text-align:center;color:#c9184a;">Gracias por este año increíble ✨<br>Sigamos creciendo juntos 💕<br><br>TE AMO ❤️</h2>
+</div>
+
+<!-- GALERÍA -->
+<div class="galeria">
+  <img src="foto1.jpg" class="foto nosotros">
+  <img src="foto2.jpg" class="foto">
+  <img src="foto3.jpg" class="foto nosotros">
+  <img src="foto4.jpg" class="foto">
+  <img src="foto5.jpg" class="foto nosotros">
+  <img src="foto6.jpg" class="foto nosotros">
+</div>
+
+<!-- CORAZONES -->
+<div class="corazones" id="corazones">
+  <span class="corazon" style="left:10%;animation-delay:0s">🤍</span>
+  <span class="corazon" style="left:30%;animation-delay:3s">💗</span>
+  <span class="corazon" style="left:50%;animation-delay:6s">💞</span>
+  <span class="corazon" style="left:70%;animation-delay:9s">💖</span>
+  <span class="corazon" style="left:90%;animation-delay:12s">🤍</span>
+</div>
+
+<script>
+const musica = document.getElementById("musica");
+musica.volume = 0;
+const inicio = 40;
+
+function playMusic(){
+  musica.currentTime = inicio;
+  musica.play().then(()=>{
+    let v=0;
+    const fade=setInterval(()=>{
+      if(v<0.7){v+=.02;musica.volume=v;}
+      else clearInterval(fade);
+    },200);
+  }).catch(()=>{
+    document.addEventListener("click",playMusic,{once:true});
+  });
+}
+
+window.addEventListener("load",playMusic);
+
+window.addEventListener("scroll",()=>{
+  if(window.innerHeight+window.scrollY>=document.body.offsetHeight-50){
+    document.getElementById("corazones").style.display="block";
+    document.body.classList.add("final");
+  }
+});
+</script>
+
+</body>
+</html>
